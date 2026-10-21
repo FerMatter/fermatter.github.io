@@ -1,0 +1,269 @@
+<!DOCTYPE html><html lang="en" dir="ltr" data-theme="dark" data-has-toc data-has-sidebar class="astro-g5ptsecz"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Shortcuts and appearance | FerMatter</title><link rel="canonical" href="https://fermatter.github.io/guide/preferences/"/><link rel="sitemap" href="/sitemap-index.xml"/><link rel="shortcut icon" href="/assets/favicon.svg" type="image/svg+xml"/><meta name="generator" content="Astro v7.4.1"/><meta name="generator" content="Starlight v0.42.6"/><meta property="og:title" content="Shortcuts and appearance"/><meta property="og:type" content="article"/><meta property="og:url" content="https://fermatter.github.io/guide/preferences/"/><meta property="og:locale" content="en"/><meta property="og:description" content="Change editing shortcuts and keep the app beside your slides."/><meta property="og:site_name" content="FerMatter"/><meta name="twitter:card" content="summary_large_image"/><meta name="description" content="Change editing shortcuts and keep the app beside your slides."/><script>(() => {
+  const storageKey = 'starlight-theme';
+  const system = matchMedia('(prefers-color-scheme: light)');
+  const parse = value => value === 'light' || value === 'dark' ? value : null;
+  let preference = null;
+  try { preference = parse(localStorage.getItem(storageKey)); } catch {}
+
+  function apply() {
+    const theme = preference ?? (system.matches ? 'light' : 'dark');
+    document.documentElement.dataset.theme = theme;
+    const label = theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode';
+    document.querySelectorAll('[data-theme-toggle]').forEach(button => {
+      button.setAttribute('aria-label', label);
+      button.setAttribute('title', label);
+    });
+  }
+
+  apply();
+  system.addEventListener('change', () => { if (!preference) apply(); });
+  window.addEventListener('storage', event => {
+    if (event.key === storageKey || event.key === null) {
+      preference = parse(event.newValue);
+      apply();
+    }
+  });
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('[data-theme-toggle]').forEach(button => {
+      button.addEventListener('click', () => {
+        preference = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+        try { localStorage.setItem(storageKey, preference); } catch {}
+        apply();
+      });
+      button.hidden = false;
+    });
+    apply();
+  }, { once: true });
+})();
+</script><link rel="stylesheet" href="/_astro/print.ehPL0gv-.css" media="print"><link rel="stylesheet" href="/_astro/middleware.BMfQs1qr.css"><script type="module" src="/_astro/page.cNngjUgL.js"></script></head><body class="astro-g5ptsecz"><a class="sl-skip-link astro-qb7clj6f" href="#_top">Skip to content</a><div class="page sl-flex astro-yntsjkba"><header class="header astro-yntsjkba"><div class="fm-header"><a class="fm-brand" href="/" aria-label="FerMatter home"><span class="fm-brand-mark" style="mask-image:url(&quot;/assets/fermat.svg&quot;);-webkit-mask-image:url(&quot;/assets/fermat.svg&quot;)" aria-hidden="true"></span>FerMatter</a><nav aria-label="Product"><a href="/features/">Features</a><a href="/guide/" aria-current="page">Guide</a><a href="/download/">Download</a></nav><div class="fm-header-tools"><a class="fm-github" href="https://github.com/k-onoue/FerMatter" title="GitHub (repository access required)">GitHub <span aria-hidden="true">↗</span></a><button class="fm-theme-toggle" type="button" data-theme-toggle hidden><svg aria-hidden="true" class="fm-theme-light astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M5 12a1 1 0 0 0-1-1H3a1 1 0 0 0 0 2h1a1 1 0 0 0 1-1Zm.64 5-.71.71a1 1 0 0 0 0 1.41 1 1 0 0 0 1.41 0l.71-.71A1 1 0 0 0 5.64 17ZM12 5a1 1 0 0 0 1-1V3a1 1 0 0 0-2 0v1a1 1 0 0 0 1 1Zm5.66 2.34a1 1 0 0 0 .7-.29l.71-.71a1 1 0 1 0-1.41-1.41l-.66.71a1 1 0 0 0 0 1.41 1 1 0 0 0 .66.29Zm-12-.29a1 1 0 0 0 1.41 0 1 1 0 0 0 0-1.41l-.71-.71a1.004 1.004 0 1 0-1.43 1.41l.73.71ZM21 11h-1a1 1 0 0 0 0 2h1a1 1 0 0 0 0-2Zm-2.64 6A1 1 0 0 0 17 18.36l.71.71a1 1 0 0 0 1.41 0 1 1 0 0 0 0-1.41l-.76-.66ZM12 6.5a5.5 5.5 0 1 0 5.5 5.5A5.51 5.51 0 0 0 12 6.5Zm0 9a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7Zm0 3.5a1 1 0 0 0-1 1v1a1 1 0 0 0 2 0v-1a1 1 0 0 0-1-1Z"/></svg><svg aria-hidden="true" class="fm-theme-dark astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21.64 13a1 1 0 0 0-1.05-.14 8.049 8.049 0 0 1-3.37.73 8.15 8.15 0 0 1-8.14-8.1 8.59 8.59 0 0 1 .25-2A1 1 0 0 0 8 2.36a10.14 10.14 0 1 0 14 11.69 1 1 0 0 0-.36-1.05Zm-9.5 6.69A8.14 8.14 0 0 1 7.08 5.22v.27a10.15 10.15 0 0 0 10.14 10.14 9.784 9.784 0 0 0 2.1-.22 8.11 8.11 0 0 1-7.18 4.32v-.04Z"/></svg></button><site-search class=" astro-b5kgnn7o" data-translations="{&quot;placeholder&quot;:&quot;Search&quot;}"><button data-open-modal disabled aria-label="Search" aria-keyshortcuts="Control+K" class="astro-b5kgnn7o"><svg aria-hidden="true" class="astro-b5kgnn7o astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21.71 20.29 18 16.61A9 9 0 1 0 16.61 18l3.68 3.68a.999.999 0 0 0 1.42 0 1 1 0 0 0 0-1.39ZM11 18a7 7 0 1 1 0-14 7 7 0 0 1 0 14Z"/></svg><span class="sl-hidden md:sl-block astro-b5kgnn7o" aria-hidden="true">Search</span><kbd class="sl-hidden md:sl-flex astro-b5kgnn7o" style="display: none;"><kbd class="astro-b5kgnn7o">Ctrl</kbd><kbd class="astro-b5kgnn7o">K</kbd></kbd></button><dialog style="padding:0" aria-label="Search" class="astro-b5kgnn7o"><div class="dialog-frame sl-flex astro-b5kgnn7o"><button data-close-modal class="sl-flex md:sl-hidden astro-b5kgnn7o">Cancel</button><div class="search-container astro-b5kgnn7o"><div id="starlight__search" class="astro-b5kgnn7o"></div></div></div></dialog></site-search><script>
+	(() => {
+		const openBtn = document.querySelector('button[data-open-modal]');
+		const shortcut = openBtn?.querySelector('kbd');
+		if (!openBtn || !(shortcut instanceof HTMLElement)) return;
+		const platformKey = shortcut.querySelector('kbd');
+		if (platformKey && /(Mac|iPhone|iPod|iPad)/i.test(navigator.platform)) {
+			platformKey.textContent = '⌘';
+			openBtn.setAttribute('aria-keyshortcuts', 'Meta+K');
+		}
+		shortcut.style.display = '';
+	})();
+</script><script type="module" src="/_astro/Search.astro_astro_type_script_index_0_lang.g9hoxVJg.js"></script></div></div></header><nav class="sidebar print:hidden astro-yntsjkba" aria-label="Main"><button popovertarget="starlight__sidebar" class="sl-menu-button sl-flex md:sl-hidden print:hidden astro-r2osgdlg"><svg aria-hidden="true" class="open-menu astro-r2osgdlg astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M3 8h18a1 1 0 1 0 0-2H3a1 1 0 0 0 0 2Zm18 8H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2Zm0-5H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2Z"/></svg><svg aria-hidden="true" class="close-menu astro-r2osgdlg astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="m13.41 12 6.3-6.29a1.004 1.004 0 1 0-1.42-1.42L12 10.59l-6.29-6.3a1.004 1.004 0 0 0-1.42 1.42l6.3 6.29-6.3 6.29a1 1 0 0 0 0 1.42.998.998 0 0 0 1.42 0l6.29-6.3 6.29 6.3a.999.999 0 0 0 1.42 0 1 1 0 0 0 0-1.42L13.41 12Z"/></svg><span class="sr-only astro-r2osgdlg">Menu</span></button><script type="module">var e=class extends HTMLElement{constructor(){super();let e=matchMedia(`(min-width: 50em)`),t=()=>{this.popover=e.matches?null:`auto`};t(),e.addEventListener(`change`,()=>t()),this.addEventListener(`toggle`,({newState:e})=>this.trapFocus(e===`open`))}trapFocus(e){document.querySelectorAll(`.main-frame, .sl-skip-link`).forEach(t=>{t.toggleAttribute(`inert`,e)})}};customElements.define(`sl-sidebar-pane`,e);</script><script type="module">var e=class extends HTMLElement{constructor(){super();let e=this.querySelector(`select`);e&&(e.addEventListener(`change`,e=>{e.currentTarget instanceof HTMLSelectElement&&(window.location.pathname=e.currentTarget.value)}),window.addEventListener(`pageshow`,t=>{if(!t.persisted)return;let n=e.querySelector(`option[selected]`)?.index;n!==e.selectedIndex&&(e.selectedIndex=n??0)}))}};customElements.define(`starlight-lang-select`,e);</script><sl-sidebar-pane popover id="starlight__sidebar" class="sidebar-pane astro-yntsjkba"><div class="sidebar-content sl-flex astro-yntsjkba"><sl-sidebar-state-persist data-hash="0kg44sp" class="astro-ipdry5cl"><script aria-hidden="true">
+		(() => {
+			try {
+				if (!matchMedia('(min-width: 50em)').matches) return;
+				/** @type {HTMLElement | null} */
+				const target = document.querySelector('sl-sidebar-state-persist');
+				const state = JSON.parse(sessionStorage.getItem('sl-sidebar-state') || '0');
+				if (!target || !state || target.dataset.hash !== state.hash) return;
+				window._starlightScrollRestore = state.scroll;
+				customElements.define(
+					'sl-sidebar-restore',
+					class SidebarRestore extends HTMLElement {
+						connectedCallback() {
+							try {
+								const idx = parseInt(this.dataset.index || '');
+								const details = this.closest('details');
+								if (details && typeof state.open[idx] === 'boolean') details.open = state.open[idx];
+							} catch {}
+						}
+					}
+				);
+			} catch {}
+		})();
+	</script><ul class="top-level astro-rmhv4bp6"><li class="astro-rmhv4bp6"><details open class="astro-rmhv4bp6"><summary class="astro-rmhv4bp6"><span class="group-label astro-rmhv4bp6"><span class="large astro-rmhv4bp6">Start here</span></span><svg aria-hidden="true" class="caret astro-rmhv4bp6 astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="0"></sl-sidebar-restore><ul class="astro-rmhv4bp6"><li class="astro-rmhv4bp6"><a href="/guide/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Use FerMatter</span></a></li><li class="astro-rmhv4bp6"><a href="/guide/paper-to-slides/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">From your paper to a slide</span></a></li><li class="astro-rmhv4bp6"><a href="/guide/requirements/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Requirements</span></a></li></ul></details></li><li class="astro-rmhv4bp6"><details open class="astro-rmhv4bp6"><summary class="astro-rmhv4bp6"><span class="group-label astro-rmhv4bp6"><span class="large astro-rmhv4bp6">Create &amp; export</span></span><svg aria-hidden="true" class="caret astro-rmhv4bp6 astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="1"></sl-sidebar-restore><ul class="astro-rmhv4bp6"><li class="astro-rmhv4bp6"><a href="/guide/instant/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Make an equation instantly</span></a></li><li class="astro-rmhv4bp6"><a href="/guide/edit-equation/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Make a version for your talk</span></a></li><li class="astro-rmhv4bp6"><a href="/guide/export/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Choose size and format</span></a></li><li class="astro-rmhv4bp6"><a href="/guide/new-project/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Start from pasted equations</span></a></li><li class="astro-rmhv4bp6"><a href="/guide/figures/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Use TikZ or CeTZ drawings</span></a></li></ul></details></li><li class="astro-rmhv4bp6"><details open class="astro-rmhv4bp6"><summary class="astro-rmhv4bp6"><span class="group-label astro-rmhv4bp6"><span class="large astro-rmhv4bp6">Your workspace</span></span><svg aria-hidden="true" class="caret astro-rmhv4bp6 astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="2"></sl-sidebar-restore><ul class="astro-rmhv4bp6"><li class="astro-rmhv4bp6"><a href="/guide/navigate-paper/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Find an equation in the paper</span></a></li><li class="astro-rmhv4bp6"><a href="/guide/source-editor/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Edit the project source</span></a></li><li class="astro-rmhv4bp6"><a href="/guide/preferences/" aria-current="page" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Shortcuts and appearance</span></a></li></ul></details></li><li class="astro-rmhv4bp6"><details open class="astro-rmhv4bp6"><summary class="astro-rmhv4bp6"><span class="group-label astro-rmhv4bp6"><span class="large astro-rmhv4bp6">Reference</span></span><svg aria-hidden="true" class="caret astro-rmhv4bp6 astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="3"></sl-sidebar-restore><ul class="astro-rmhv4bp6"><li class="astro-rmhv4bp6"><a href="/guide/automation/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">MCP and CLI</span></a></li><li class="astro-rmhv4bp6"><a href="/guide/limits/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Limits and troubleshooting</span></a></li><li class="astro-rmhv4bp6"><a href="/guide/why/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Make the talk your own</span></a></li></ul></details></li></ul><script aria-hidden="true">
+		(() => {
+			const scroller = document.getElementById('starlight__sidebar');
+			if (!window._starlightScrollRestore || !scroller) return;
+			scroller.scrollTop = window._starlightScrollRestore;
+			delete window._starlightScrollRestore;
+		})();
+	</script></sl-sidebar-state-persist><div class="md:sl-hidden"><div class="mobile-preferences sl-flex astro-p4azlveh"><div class="social-icons astro-p4azlveh"><a href="https://github.com/k-onoue/FerMatter" rel="me" class="sl-flex astro-n2mnl6yq"><span class="sr-only astro-n2mnl6yq">GitHub</span><svg aria-hidden="true" class="astro-n2mnl6yq astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.08 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0 0 12 .3Z"/></svg></a></div><button class="fm-theme-toggle" type="button" data-theme-toggle hidden><svg aria-hidden="true" class="fm-theme-light astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M5 12a1 1 0 0 0-1-1H3a1 1 0 0 0 0 2h1a1 1 0 0 0 1-1Zm.64 5-.71.71a1 1 0 0 0 0 1.41 1 1 0 0 0 1.41 0l.71-.71A1 1 0 0 0 5.64 17ZM12 5a1 1 0 0 0 1-1V3a1 1 0 0 0-2 0v1a1 1 0 0 0 1 1Zm5.66 2.34a1 1 0 0 0 .7-.29l.71-.71a1 1 0 1 0-1.41-1.41l-.66.71a1 1 0 0 0 0 1.41 1 1 0 0 0 .66.29Zm-12-.29a1 1 0 0 0 1.41 0 1 1 0 0 0 0-1.41l-.71-.71a1.004 1.004 0 1 0-1.43 1.41l.73.71ZM21 11h-1a1 1 0 0 0 0 2h1a1 1 0 0 0 0-2Zm-2.64 6A1 1 0 0 0 17 18.36l.71.71a1 1 0 0 0 1.41 0 1 1 0 0 0 0-1.41l-.76-.66ZM12 6.5a5.5 5.5 0 1 0 5.5 5.5A5.51 5.51 0 0 0 12 6.5Zm0 9a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7Zm0 3.5a1 1 0 0 0-1 1v1a1 1 0 0 0 2 0v-1a1 1 0 0 0-1-1Z"/></svg><svg aria-hidden="true" class="fm-theme-dark astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21.64 13a1 1 0 0 0-1.05-.14 8.049 8.049 0 0 1-3.37.73 8.15 8.15 0 0 1-8.14-8.1 8.59 8.59 0 0 1 .25-2A1 1 0 0 0 8 2.36a10.14 10.14 0 1 0 14 11.69 1 1 0 0 0-.36-1.05Zm-9.5 6.69A8.14 8.14 0 0 1 7.08 5.22v.27a10.15 10.15 0 0 0 10.14 10.14 9.784 9.784 0 0 0 2.1-.22 8.11 8.11 0 0 1-7.18 4.32v-.04Z"/></svg></button></div></div></div></sl-sidebar-pane></nav><div class="main-frame astro-yntsjkba"><script type="module">var e=document.getElementById(`starlight__sidebar`),t=e?.querySelector(`sl-sidebar-state-persist`),n=`sl-sidebar-state`,r=()=>{let r=[],i=t?.dataset.hash||``;try{let e=sessionStorage.getItem(n),t=JSON.parse(e||`{}`);Array.isArray(t.open)&&t.hash===i&&(r=t.open)}catch{}return{hash:i,open:r,scroll:e?.scrollTop||0}},i=e=>{try{sessionStorage.setItem(n,JSON.stringify(e))}catch{}},a=()=>i(r()),o=(e,t)=>{let n=r();n.open[t]=e,i(n)};t?.addEventListener(`click`,e=>{if(!(e.target instanceof Element))return;let t=e.target.closest(`summary`)?.closest(`details`);if(!t)return;let n=t.querySelector(`sl-sidebar-restore`),r=parseInt(n?.dataset.index||``);isNaN(r)||o(!t.open,r)}),addEventListener(`visibilitychange`,()=>{document.visibilityState===`hidden`&&a()});</script><div class="lg:sl-flex astro-lrzkfocr"><aside class="right-sidebar-container print:hidden astro-lrzkfocr"><div class="right-sidebar astro-lrzkfocr"><div class="lg:sl-hidden astro-qok35upx"><mobile-starlight-toc data-min-h="2" data-max-h="3" class="astro-66cqc7ze"><nav aria-labelledby="starlight__on-this-page--mobile" class="astro-66cqc7ze"><details id="starlight__mobile-toc" class="astro-66cqc7ze"><summary id="starlight__on-this-page--mobile" class="sl-flex astro-66cqc7ze"><span class="toggle sl-flex astro-66cqc7ze">On this page<svg aria-hidden="true" class="caret astro-66cqc7ze astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></span><span class="display-current astro-66cqc7ze"></span></summary><div class="dropdown astro-66cqc7ze"><ul class="isMobile astro-jugkfwgx" style="--depth: 0;"><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#_top" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Overview</span></a></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#compiler-tools" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Compiler tools</span></a></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#window-zoom" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Window zoom</span></a></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#zoom-one-pane" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Zoom one pane</span></a></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#color-themes" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Color themes</span></a></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#manage-shortcuts-and-themes-as-files" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Manage shortcuts and themes as files</span></a></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#dock-icon" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Dock icon</span></a></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#updates" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Updates</span></a></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#keep-equations-beside-your-slides" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Keep equations beside your slides</span></a></li></ul></div></details></nav></mobile-starlight-toc><script type="module" src="/_astro/MobileTableOfContents.astro_astro_type_script_index_0_lang.C3fM4Kra.js"></script></div><div class="right-sidebar-panel sl-hidden lg:sl-block astro-qok35upx"><div class="sl-container astro-qok35upx"><starlight-toc data-min-h="2" data-max-h="3"><nav aria-labelledby="starlight__on-this-page"><h2 id="starlight__on-this-page">On this page</h2><ul class="astro-jugkfwgx" style="--depth: 0;"><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#_top" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Overview</span></a></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#compiler-tools" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Compiler tools</span></a></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#window-zoom" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Window zoom</span></a></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#zoom-one-pane" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Zoom one pane</span></a></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#color-themes" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Color themes</span></a></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#manage-shortcuts-and-themes-as-files" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Manage shortcuts and themes as files</span></a></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#dock-icon" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Dock icon</span></a></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#updates" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Updates</span></a></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#keep-equations-beside-your-slides" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Keep equations beside your slides</span></a></li></ul></nav></starlight-toc><script type="module" src="/_astro/TableOfContents.astro_astro_type_script_index_0_lang.BpJaGz7G.js"></script></div></div></div></aside><div class="main-pane astro-lrzkfocr"><main data-pagefind-body class="astro-g5ptsecz" lang="en" dir="ltr"><div class="content-panel astro-a7po4psb"><div class="sl-container astro-a7po4psb"><h1 id="_top" class="astro-bebwqqxs">Shortcuts and appearance</h1></div></div><div class="content-panel astro-a7po4psb"><div class="sl-container astro-a7po4psb"><div class="sl-markdown-content"><ul>
+<li>Open <strong>Settings</strong> using the gear button or <code>⌘,</code>.</li>
+<li><strong>Shortcuts</strong>: record a shortcut, reset one assignment, or restore defaults; changes persist.</li>
+<li>Duplicate assignments and reserved macOS/text-editing shortcuts are rejected.</li>
+<li><strong>Projects → Default project folder</strong>: choose where to create/import/duplicate projects; existing projects stay in place.</li>
+<li><strong>Editor → Save files</strong>: choose After changes or Manually (<code>⌘S</code>).</li>
+<li><strong>New Project → Edit Template</strong>: customize the setup for <a href="/guide/new-project/">new projects</a>.</li>
+</ul>
+<h2 id="compiler-tools">Compiler tools</h2>
+<ul>
+<li>Review tool paths during first-launch setup or later in <strong>Settings → Tools</strong>.</li>
+<li>Enter an absolute executable path or use its folder button; choose <strong>Apply</strong> to save.</li>
+<li>Empty fields use automatic detection. The reset arrow clears an override; choose <strong>Apply</strong> to restore detection.</li>
+<li><strong>Additional tools</strong> includes PDF converters, SyncTeX, and Ghostscript. <strong>Check paths</strong> checks executable availability without running the tools.</li>
+<li>Paths apply to subsequent Library renders, Source previews, PDF builds/navigation, and both Instant modes. Use <strong>Rescan</strong> or rebuild the PDF to refresh existing results.</li>
+<li>Edit <code>tools.json</code> in the revealed Settings folder and choose <strong>Reload</strong> to accept external changes. Invalid JSON keeps the last valid configuration; invalid executable paths are reported without falling back to another binary.</li>
+<li>Tool installation and the per-project main file/compiler choice remain separate: see <a href="/guide/requirements/">requirements</a>.</li>
+</ul>
+<h2 id="window-zoom">Window zoom</h2>
+<ul>
+<li><code>⌘+</code> or <code>⌘=</code> enlarges the interface; <code>⌘−</code> reduces it; <code>⌘0</code> restores 100%.</li>
+<li>Zoom works in Projects, Library, Source and dialogs, including while editing. The range is 50–200%, in 10% steps; restarting the app restores 100%.</li>
+<li><strong>Shortcuts → Zoom In / Zoom Out / Actual Size</strong> customizes these keys.</li>
+<li>PDF-only controls use <code>⌃⌘+</code>, <code>⌃⌘−</code> and <code>⌃⌘0</code> (Fit PDF); the PDF toolbar also remains available.</li>
+<li>Saved custom shortcuts take precedence over new zoom defaults. A conflicting default appears unassigned until the custom assignment is changed or reset.</li>
+<li>Window zoom changes the interface, not exported image dimensions or output font sizes.</li>
+</ul>
+<h2 id="zoom-one-pane">Zoom one pane</h2>
+<ul>
+<li>Point at Projects, the Library canvas or the PDF pane; hold <code>Control</code> and scroll up to enlarge or down to reduce it.</li>
+<li>Each area keeps its own zoom. Regular scrolling and <code>⌘+</code> / <code>⌘−</code> window zoom remain available.</li>
+<li>Projects (grid and list) and the Library canvas support 50–200%; click their percentage to reset to 100%.</li>
+<li>PDF supports 20–400%. Scrolling from <strong>Fit</strong> starts at the displayed scale; <strong>Fit width</strong> returns to automatic sizing.</li>
+<li>Pane zoom changes the display only; exported image sizes and source files are unchanged.</li>
+</ul>
+<h2 id="color-themes">Color themes</h2>
+<ul>
+<li>Open <strong>Settings → Appearance → Color Theme</strong>; choose Default or one of fifteen bundled pairs.</li>
+<li><strong>System</strong> follows macOS; <strong>Light</strong> and <strong>Dark</strong> select the matching palette. The preview follows the selected appearance.</li>
+<li>Themes apply immediately and persist across launches; switching replaces the active <code>theme.json</code>. Export custom colors first to keep a reusable copy.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Theme</th><th>Light</th><th>Dark</th></tr></thead><tbody><tr><td><a href="https://github.com/primer/github-vscode-theme">GitHub</a></td><td>GitHub Light (classic)</td><td>GitHub Dark (classic)</td></tr><tr><td><a href="https://github.com/catppuccin/vscode">Catppuccin</a></td><td>Latte</td><td>Mocha</td></tr><tr><td><a href="https://github.com/microsoft/vscode/tree/main/extensions/theme-solarized-light">Solarized</a></td><td>Solarized Light</td><td>Solarized Dark</td></tr><tr><td><a href="https://github.com/akamud/vscode-theme-onelight">Atom One</a></td><td>One Light</td><td>One Dark</td></tr><tr><td><a href="https://github.com/rose-pine/vscode">Rosé Pine</a></td><td>Dawn</td><td>Rosé Pine</td></tr><tr><td><a href="https://github.com/microsoft/vscode/tree/main/extensions/theme-defaults">VS Code Modern</a></td><td>Light Modern</td><td>Dark Modern</td></tr><tr><td><a href="https://github.com/ayu-theme/vscode-ayu">Ayu</a></td><td>Ayu Light</td><td>Ayu Dark</td></tr><tr><td><a href="https://github.com/tokyo-night/tokyo-night-vscode-theme">Tokyo Night</a></td><td>Tokyo Night Light</td><td>Tokyo Night</td></tr><tr><td><a href="https://github.com/sdras/night-owl-vscode-theme">Night Owl</a></td><td>Light Owl</td><td>Night Owl</td></tr><tr><td><a href="https://github.com/jolaleye/horizon-theme-vscode">Horizon</a></td><td>Horizon Bright</td><td>Horizon</td></tr><tr><td><a href="https://github.com/antfu/vscode-theme-vitesse">Vitesse</a></td><td>Vitesse Light</td><td>Vitesse Dark</td></tr><tr><td><a href="https://github.com/sainnhe/everforest-vscode">Everforest</a></td><td>Everforest Light</td><td>Everforest Dark</td></tr><tr><td><a href="https://github.com/sainnhe/gruvbox-material-vscode">Gruvbox Material</a></td><td>Gruvbox Material Light</td><td>Gruvbox Material Dark</td></tr><tr><td><a href="https://github.com/liviuschera/noctis">Noctis</a></td><td>Noctis Lux</td><td>Noctis</td></tr><tr><td><a href="https://github.com/miguelsolorio/min-theme">Min</a></td><td>Min Light</td><td>Min Dark</td></tr></tbody></table>
+<ul>
+<li>Palettes are adapted to FerMatter; exported artwork retains its original rendering.</li>
+</ul>
+<h2 id="manage-shortcuts-and-themes-as-files">Manage shortcuts and themes as files</h2>
+<ul>
+<li><strong>Shortcuts</strong> and <strong>Appearance</strong> provide <strong>Edit JSON</strong>, <strong>Reload</strong>, <strong>Import…</strong>, and <strong>Export…</strong>.</li>
+<li><strong>Tools → Settings folder → Reveal in Finder</strong> opens the storage location.</li>
+<li>Edit <code>keybindings.json</code> or <code>theme.json</code>, save, then choose <strong>Reload</strong> to apply external changes.</li>
+<li>Import replaces the active settings after validation; export saves a reusable copy.</li>
+<li>Invalid files keep the last valid settings; reset shortcuts or select the Default theme to restore built-ins.</li>
+<li>Theme files customize light/dark interface and editor colors; exported artwork keeps its original colors.</li>
+</ul>
+<h2 id="dock-icon">Dock icon</h2>
+<ul>
+<li><strong>Settings → Appearance → Dock icon</strong> chooses Automatic or a fixed face: Detailed Fermat, Standard, Smiling, or Downturned mouth. Changes apply immediately and persist across launches.</li>
+<li>Automatic follows the number of openings in the last seven days, including the current opening. Manual choices stay fixed until Automatic is selected again.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Openings</th><th>Face</th></tr></thead><tbody><tr><td>14 or more</td><td>Detailed Fermat portrait</td></tr><tr><td>7–13</td><td>Standard</td></tr><tr><td>3–6</td><td>Smiling</td></tr><tr><td>0–2</td><td>Downturned mouth</td></tr></tbody></table>
+<ul>
+<li>Launching FerMatter or reopening it from the Dock updates the count. Duplicate native events within two seconds count once; background automation does not count.</li>
+<li>History stays on this Mac in <code>IconUsage.json</code>. Finder and the app at rest use the standard blue icon; the active Dock artwork is recalculated when opened.</li>
+</ul>
+<h2 id="updates">Updates</h2>
+<ul>
+<li>This version uses manual updates; it has no in-app release checker or downloader.</li>
+<li>Save your work, quit FerMatter, and replace the app in Applications with the newer build.</li>
+<li>Upgrading from Mathlidelux: quit the old app, install <code>FerMatter.app</code>, then remove only the old <code>Mathlidelux.app</code> bundle. Projects, settings, drafts and SVG re-editing remain available; project folders stay in place.</li>
+<li>Projects and saved settings remain outside the application bundle.</li>
+</ul>
+<h2 id="keep-equations-beside-your-slides">Keep equations beside your slides</h2>
+<ul>
+<li><strong>Always on Top</strong> (<code>⇧⌘P</code>) pins the window.</li>
+<li><strong>Settings → Appearance</strong> chooses System/Light/Dark and background opacity.</li>
+<li>Opacity affects the background; text and equations stay opaque.</li>
+<li><code>⌃⌘F</code> enters native full screen.</li>
+<li>If entering full screen from a pinned window fails, turn pinning off, enter full screen, then re-enable it.</li>
+<li>Some wallpaper providers/Spaces cannot be reproduced behind a transparent full-screen window; native transparency remains available.</li>
+</ul></div><footer class="sl-flex astro-ddtxxk7k"><div class="meta sl-flex astro-ddtxxk7k"><a href="https://github.com/k-onoue/FerMatter/edit/main/user-docs/preferences.md">Edit this page ↗</a></div><div class="pagination-links print:hidden astro-b5raizh3" dir="ltr"><a href="/guide/source-editor/" rel="prev" class="astro-b5raizh3"><svg aria-hidden="true" class="astro-b5raizh3 astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.5rem;"><path d="M17 11H9.41l3.3-3.29a1.004 1.004 0 1 0-1.42-1.42l-5 5a1 1 0 0 0-.21.33 1 1 0 0 0 0 .76 1 1 0 0 0 .21.33l5 5a1.002 1.002 0 0 0 1.639-.325 1 1 0 0 0-.219-1.095L9.41 13H17a1 1 0 0 0 0-2Z"/></svg><span class="astro-b5raizh3">Previous<br class="astro-b5raizh3"><span class="link-title astro-b5raizh3">Edit the project source</span></span></a><a href="/guide/automation/" rel="next" class="astro-b5raizh3"><svg aria-hidden="true" class="astro-b5raizh3 astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.5rem;"><path d="M17.92 11.62a1.001 1.001 0 0 0-.21-.33l-5-5a1.003 1.003 0 1 0-1.42 1.42l3.3 3.29H7a1 1 0 0 0 0 2h7.59l-3.3 3.29a1.002 1.002 0 0 0 .325 1.639 1 1 0 0 0 1.095-.219l5-5a1 1 0 0 0 .21-.33 1 1 0 0 0 0-.76Z"/></svg><span class="astro-b5raizh3">Next<br class="astro-b5raizh3"><span class="link-title astro-b5raizh3">MCP and CLI</span></span></a></div></footer><footer class="fm-footer not-content" data-pagefind-ignore><a class="fm-brand" href="/">FerMatter</a><nav aria-label="Footer"><a href="/features/">Features</a><a href="/guide/">Guide</a><a href="/download/">Download</a><a href="https://github.com/k-onoue/FerMatter">GitHub ↗</a><a href="https://github.com/k-onoue/FerMatter/blob/main/CONTRIBUTING.md">Contribute ↗</a></nav></footer></div></div></main></div></div></div></div></body></html>
