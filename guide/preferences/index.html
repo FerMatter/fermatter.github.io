@@ -218,38 +218,9 @@
 </ul>
 <h2 id="dock-icon">Dock icon</h2>
 <ul>
-<li><strong>Settings → Appearance → Dock icon</strong> chooses Automatic or a fixed face: Detailed Fermat, Standard, Smiling, or Downturned mouth. Changes apply immediately and persist across launches.</li>
-<li>Automatic follows the number of openings in the last seven days, including the current opening. Manual choices stay fixed until Automatic is selected again.</li>
-</ul>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>Openings</th><th>Face</th></tr></thead><tbody><tr><td>14 or more</td><td>Detailed Fermat portrait</td></tr><tr><td>7–13</td><td>Standard</td></tr><tr><td>3–6</td><td>Smiling</td></tr><tr><td>0–2</td><td>Downturned mouth</td></tr></tbody></table>
-<ul>
-<li>Launching FerMatter or reopening it from the Dock updates the count. Duplicate native events within two seconds count once; background automation does not count.</li>
-<li>History stays on this Mac in <code>IconUsage.json</code>. Finder and the app at rest use the standard blue icon; the active Dock artwork is recalculated when opened.</li>
+<li>The app, Dock, menu bar and website use the same detailed Fermat portrait.</li>
+<li>The Dock face no longer changes with opening frequency; the previous face selector has been removed.</li>
+<li>Existing <code>dockIcon</code> preferences and <code>IconUsage.json</code> history are preserved for compatibility, but no longer affect the artwork. New openings are not recorded.</li>
 </ul>
 <h2 id="updates">Updates</h2>
 <ul>
