@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "repository": "FerMatter/fermatter.github.io",
-  "updatedAt": "2026-10-25T07:16:35.794Z",
+  "updatedAt": "2026-10-25T07:48:32.487Z",
   "assets": [
     {
       "id": 662529970,
@@ -23,6 +23,13 @@
       "version": "v0.11.0-preview.3",
       "platform": "macOS",
       "downloads": 2
+    },
+    {
+      "id": 674402546,
+      "name": "fermatter_0.11.0.preview.3+ubuntu.1_amd64.deb",
+      "version": "ubuntu-apt",
+      "platform": "Linux",
+      "downloads": 0
     }
   ]
 }
