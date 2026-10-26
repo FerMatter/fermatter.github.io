@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "repository": "FerMatter/fermatter.github.io",
-  "updatedAt": "2026-10-26T03:39:44.546Z",
+  "updatedAt": "2026-10-26T04:17:59.689Z",
   "assets": [
     {
       "id": 662529970,
@@ -43,6 +43,13 @@
       "name": "fermatter_0.11.0.preview.4+ubuntu.1_amd64.deb",
       "version": "ubuntu-apt",
       "platform": "Linux",
+      "downloads": 0
+    },
+    {
+      "id": 676932497,
+      "name": "FerMatter_0.11.0_windows_x64_preview.1_unsigned_setup.exe",
+      "version": "v0.11.0-windows-preview.1",
+      "platform": "Windows",
       "downloads": 0
     }
   ]
