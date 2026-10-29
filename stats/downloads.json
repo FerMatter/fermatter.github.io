@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "repository": "FerMatter/fermatter.github.io",
-  "updatedAt": "2026-10-29T10:00:09.706Z",
+  "updatedAt": "2026-10-29T10:02:16.970Z",
   "assets": [
     {
       "id": 662529970,
@@ -36,7 +36,7 @@
       "name": "FerMatter.dmg",
       "version": "v0.11.0-preview.4",
       "platform": "macOS",
-      "downloads": 51
+      "downloads": 52
     },
     {
       "id": 674572616,
