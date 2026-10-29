@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "repository": "FerMatter/fermatter.github.io",
-  "updatedAt": "2026-10-29T10:21:35.184Z",
+  "updatedAt": "2026-10-29T10:26:42.256Z",
   "assets": [
     {
       "id": 662529970,
@@ -36,7 +36,7 @@
       "name": "FerMatter.dmg",
       "version": "v0.11.0-preview.4",
       "platform": "macOS",
-      "downloads": 57
+      "downloads": 58
     },
     {
       "id": 674572616,
@@ -71,7 +71,7 @@
       "name": "FerMatter_0.11.0_windows_x64_preview.4_unsigned_setup.exe",
       "version": "v0.11.0-windows-preview.4",
       "platform": "Windows",
-      "downloads": 25
+      "downloads": 26
     }
   ]
 }
