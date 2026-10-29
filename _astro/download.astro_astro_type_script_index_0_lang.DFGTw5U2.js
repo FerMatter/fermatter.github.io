@@ -1,0 +1,1 @@
+import"./content-tabs.BDTJqPNk.js";
