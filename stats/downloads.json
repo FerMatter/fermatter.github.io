@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "repository": "FerMatter/fermatter.github.io",
-  "updatedAt": "2026-10-29T14:01:25.363Z",
+  "updatedAt": "2026-10-29T14:45:23.010Z",
   "assets": [
     {
       "id": 662529970,
@@ -36,7 +36,7 @@
       "name": "FerMatter.dmg",
       "version": "v0.11.0-preview.4",
       "platform": "macOS",
-      "downloads": 78
+      "downloads": 80
     },
     {
       "id": 674572616,
@@ -71,7 +71,28 @@
       "name": "FerMatter_0.11.0_windows_x64_preview.4_unsigned_setup.exe",
       "version": "v0.11.0-windows-preview.4",
       "platform": "Windows",
-      "downloads": 29
+      "downloads": 30
+    },
+    {
+      "id": 688777732,
+      "name": "FerMatter.dmg",
+      "version": "v0.11.0-preview.5",
+      "platform": "macOS",
+      "downloads": 2
+    },
+    {
+      "id": 688805154,
+      "name": "fermatter_0.11.0.preview.5+ubuntu.1_amd64.deb",
+      "version": "ubuntu-apt",
+      "platform": "Linux",
+      "downloads": 0
+    },
+    {
+      "id": 688856036,
+      "name": "FerMatter_0.11.0_windows_x64_preview.5_unsigned_setup.exe",
+      "version": "v0.11.0-windows-preview.5",
+      "platform": "Windows",
+      "downloads": 0
     }
   ]
 }
